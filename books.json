@@ -1,0 +1,26 @@
+[
+    {
+        "author": "Dzordz Orvel",
+        "title": "1984",
+        "genre": "Klasik",
+        "rating": 5
+    },
+    {
+        "author": "Rupi Kaur",
+        "title": "Med i mleko ",
+        "genre": "Poezija",
+        "rating": 3
+    },
+    {
+        "author": "Agata Kristi",
+        "title": "I ne osta nijedan",
+        "genre": "Krimi",
+        "rating": 4
+    },
+    {
+        "author": "Dzejn Ostin",
+        "title": "Gordost i predrasude",
+        "genre": "Klasik",
+        "rating": 5
+    }
+]

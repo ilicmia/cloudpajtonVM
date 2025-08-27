@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moja Biblioteka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e8ff; /* svetlo ljubičasta pozadina */
+            color: #3d0066; /* tamnoljubičasta boja teksta */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            background-color: #e0ccff; /* svetliji ljubičasti blok za formu */
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        input, select, button {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #b399ff;
+        }
+
+        button {
+            background-color: #9b59b6; /* tamnija ljubičasta */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #7d3c98;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        li {
+            background-color: #d9b3ff; /* svetlija ljubičasta za stavke */
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        select {
+            background-color: white;
+            border: 1px solid #b399ff;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>💜 Moja Biblioteka 💜</h1>
+
+    <h2>Dodaj novu knjigu</h2>
+    <form method="post">
+        Autor: <input type="text" name="author" required>
+        Naslov: <input type="text" name="title" required>
+        Žanr: <input type="text" name="genre" required>
+        Ocena (1-5): <input type="number" name="rating" min="1" max="5" required>
+        <button type="submit">Dodaj knjigu</button>
+    </form>
+
+    <h2>Filter i sortiranje</h2>
+    <form method="get">
+        Žanr: 
+        <select name="genre">
+            <option value="">Svi žanrovi</option>
+            {% for g in genres %}
+                <option value="{{ g }}">{{ g }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filtriraj</button>
+    </form>
+
+    <h2>Knjige (sortirano po oceni)</h2>
+    <ul>
+    {% for book in books %}
+        <li>{{ book.title }} - {{ book.author }} | {{ book.genre }} | Ocena: {{ book.rating }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
