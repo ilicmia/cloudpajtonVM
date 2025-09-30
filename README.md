@@ -1,0 +1,1 @@
+Cloud domaci zadatak i seminarski

@@ -1,0 +1,37 @@
+name: Biblioteka
+version: "3.9"
+
+services:
+  bibliotekaservis:
+    container_name: bibliotekacontaineryaml
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    networks:
+      - biblioteka-net
+    volumes:
+      - biblioteka-data:/app  
+      - ./templates:/app/templates        
+    ports:
+      - "5055:5000"                       
+    
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"  
+
+networks:
+  biblioteka-net:
+    driver: bridge
+
+volumes:
+  biblioteka-data:

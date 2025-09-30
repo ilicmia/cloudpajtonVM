@@ -22,5 +22,11 @@
         "title": "Gordost i predrasude",
         "genre": "Klasik",
         "rating": 5
+    },
+    {
+        "author": "Fjodor Dostojevski",
+        "title": "Kockar",
+        "genre": "Klasik",
+        "rating": 2
     }
 ]
